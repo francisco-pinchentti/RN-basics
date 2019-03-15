@@ -4,13 +4,13 @@ import { Text, View, Image, Button } from "react-native";
 export default class BookCard extends Component {
   render() {
     return (
-      <View>
+      <View style={{ flexGrow: 1, backgroundColor: 'rgba(0.7,0.7,0.7,0.2)' }}>
         {/* <img  /> */}
-        <View>
-          <Text>{this.props.model.title}</Text>
-          <Text>ISBN: {this.props.model.isbn}</Text>
-          <Text>{this.props.model.summary || "No summary found"}</Text>
-          <View>
+        <View style={{ flexGrow: 1 }}>
+          <Text style={{ flexGrow: 1 }}>{this.props.model.title}</Text>
+          <Text style={{ flexGrow: 1 }}>ISBN: {this.props.model.isbn}</Text>
+          <Text style={{ flexGrow: 1 }}>{this.props.model.summary || "No summary found"}</Text>
+          <View style={{ flexGrow: 2, flexDirection: 'row', justifyContent: 'flex-end', padding: 4 }}>
             <Button
               title="DELETE"
               onPress={() => this.props.onDelete(this.props.model)}
