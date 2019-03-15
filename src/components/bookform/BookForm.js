@@ -127,7 +127,7 @@ class BookForm extends Component {
 
   render() {
     return (
-      <View style={{ padding: 8, height: "100%", backgroundColor: "red" }}>
+      <View style={{ padding: 8, height: "100%" }}>
         <Text>Title</Text>
         <TextInput
           name="title"

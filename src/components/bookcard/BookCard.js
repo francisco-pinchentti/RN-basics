@@ -4,7 +4,7 @@ import { Text, View, Image, Button } from "react-native";
 export default class BookCard extends Component {
   render() {
     return (
-      <View style={{ flexGrow: 1, backgroundColor: 'rgba(0.7,0.7,0.7,0.2)' }}>
+      <View style={{ flexGrow: 1, backgroundColor: 'rgba(0.9,0.9,0.9,0.1)' }}>
         {/* <img  /> */}
         <View style={{ flexGrow: 1 }}>
           <Text style={{ flexGrow: 1 }}>{this.props.model.title}</Text>
