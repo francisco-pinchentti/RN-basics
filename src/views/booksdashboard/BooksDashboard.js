@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { removeBook, listBooks } from "../../redux/actions";
 import BookCard from "../../components/bookcard/BookCard";
 import styles from "../../styles";
+import BSButton from "../../components/button/BSButton";
 
 const SEPARATOR = () => (<View style={{height: 1, width: '100%'}} />);
 
@@ -56,8 +57,7 @@ class BooksDashboard extends Component {
           ItemSeparatorComponent={SEPARATOR}
         />
         {!this.props.books.length && <Text style={styles.textRegular}>Nothing Found '(</Text>}
-        <Button
-          style={{ flexGrow: 1 }}
+        <BSButton
           title="ADD A NEW BOOK"
           onPress={() => this.newBook()}
         />
