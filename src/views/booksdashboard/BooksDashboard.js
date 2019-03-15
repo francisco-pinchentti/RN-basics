@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import { removeBook, listBooks } from "../../redux/actions";
 import BookCard from "../../components/bookcard/BookCard";
+import styles from "../../styles";
 
 class BooksDashboard extends Component {
   static navigationOptions = {
@@ -43,15 +44,15 @@ class BooksDashboard extends Component {
 
   render() {
     return (
-      <View style={{ padding: 8, wdith: "100%", height: "100%" }}>
-        <Text style={{ flexGrow: 1 }}>Current books storage</Text>
+      <View style={styles.wrapper}>
+        <Text style={styles.textRegular}>Current books storage</Text>
         <FlatList
           style={{ flexGrow: 8 }}
           keyExtractor={this.boundKeyExtractor}
           data={this.props.books}
           renderItem={this.boundRenderItem}
         />
-        {!this.props.books.length && <Text>Nothing Found '(</Text>}
+        {!this.props.books.length && <Text style={styles.textRegular}>Nothing Found '(</Text>}
         <Button
           style={{ flexGrow: 1 }}
           title="ADD A NEW BOOK"

@@ -3,6 +3,7 @@ import { View, Text, Alert, TextInput, Button } from "react-native";
 
 import { connect } from "react-redux";
 import { addBook, updateBook } from "../../redux/actions";
+import styles from "../../styles";
 
 class BookForm extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -127,23 +128,29 @@ class BookForm extends Component {
 
   render() {
     return (
-      <View style={{ padding: 8, height: "100%" }}>
-        <Text>Title</Text>
+      <View style={styles.wrapper}>
+        <Text style={styles.textSecondary}>Title</Text>
         <TextInput
           name="title"
           value={this.state.title.value}
           onChangeText={text => this.onInputChange("title", text)}
+          underlineColorAndroid={'blue'}
+          style={{flexGrow: 0.5}}
         />
-        <Text>ISBN</Text>
+        <Text style={styles.textSecondary}>ISBN</Text>
         <TextInput
           value={this.state.isbn.value}
           onChangeText={text => this.onInputChange("isbn", text)}
+          underlineColorAndroid={'blue'}
+          style={{flexGrow: 0.5}}
         />
-        <Text>Summary</Text>
+        <Text style={styles.textSecondary}>Summary</Text>
         <TextInput
           rows="3"
           value={this.state.summary.value}
           onChangeText={text => this.onInputChange("summary", text)}
+          underlineColorAndroid={'blue'}
+          style={{flexGrow: 3}}
         />
         <View style={{ flexGrow: 1, justifyContent: "flex-end" }}>
           {!this.state.id && (

@@ -1,29 +1,15 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Text, View } from "react-native";
 import BSButton from "../button/BSButton";
+import styles from "../../styles";
 
-const TEXT_STYLE = {
-  flexGrow: 1,
-  fontSize: 16,
-  letterSpacing: 1.25,
-  fontWeight: 'bold',
-  color: '#fff'
-}
-
-const TEXT_SUMMARY_STYLE = {
-  flexGrow: 1,
-  fontSize: 13,
-  letterSpacing: 1.25,
-  color: '#fff'
-}
-
-export default class BookCard extends Component {
+export default class BookCard extends PureComponent {
   render() {
     return (
       <View style={{ flexGrow: 1, backgroundColor: "#F6D55C", borderRadius: 3, padding: 4 }}>
-          <Text style={TEXT_STYLE}>{this.props.model.title}</Text>
-          <Text style={TEXT_STYLE}>ISBN: {this.props.model.isbn}</Text>
-          <Text style={TEXT_SUMMARY_STYLE}>
+          <Text style={styles.textRegular}>{this.props.model.title}</Text>
+          <Text style={styles.textRegular}>ISBN: {this.props.model.isbn}</Text>
+          <Text style={styles.textSecondary}>
             {this.props.model.summary || "No summary found"}
           </Text>
           <View
@@ -48,7 +34,4 @@ export default class BookCard extends Component {
     );
   }
 
-  shouldComponentUpdate() {
-    return true;
-  }
 }

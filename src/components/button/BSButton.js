@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { TouchableOpacity, Text } from "react-native";
 
-const DEFAULT_STYLE = {
+export const BSBUTTON_DEFAULT_STYLE = {
   flexGrow: 1,
   padding: 3,
   justifyContent: "center",
@@ -14,7 +14,7 @@ export default class BSButton extends PureComponent {
   render() {
     const containerStyle = this.props.containerStyle
       ? this.props.containerStyle
-      : DEFAULT_STYLE;
+      : BSBUTTON_DEFAULT_STYLE;
 
     const textStyle = this.props.textStyle
       ? this.props.textStyle
