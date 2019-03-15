@@ -69,8 +69,10 @@ class BookForm extends Component {
       !this.props.updateStatus.error;
     if (saveFinished) {
       Alert.alert("Book created!");
+      this.props.navigation.navigate('Dashboard');
     } else if (updateFinished) {
       Alert.alert("Book updated!");
+      this.props.navigation.navigate('Dashboard');
     }
   }
 

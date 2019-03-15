@@ -6,6 +6,8 @@ import { removeBook, listBooks } from "../../redux/actions";
 import BookCard from "../../components/bookcard/BookCard";
 import styles from "../../styles";
 
+const SEPARATOR = () => (<View style={{height: 1, width: '100%'}} />);
+
 class BooksDashboard extends Component {
   static navigationOptions = {
     title: "Books Dashboard"
@@ -51,6 +53,7 @@ class BooksDashboard extends Component {
           keyExtractor={this.boundKeyExtractor}
           data={this.props.books}
           renderItem={this.boundRenderItem}
+          ItemSeparatorComponent={SEPARATOR}
         />
         {!this.props.books.length && <Text style={styles.textRegular}>Nothing Found '(</Text>}
         <Button
